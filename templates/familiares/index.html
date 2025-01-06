@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container my-5">
+    <h1 class="text-center">Bienvenido a la Página Principal</h1>
+    <p class="text-center">Selecciona una opción para ver la información:</p>
+
+    <div class="d-flex justify-content-center mt-4">
+        <a href="{% url 'lista_familiares' %}" class="btn btn-primary mx-2">Ver Lista de Familiares</a>
+        <a href="{% url 'lista_amigos' %}" class="btn btn-secondary mx-2">Ver Lista de Amigos</a>
+        <a href="{% url 'lista_trabajos' %}" class="btn btn-success mx-2">Ver Lista de Trabajos</a>
+        <a href="{% url 'lista_blogs' %}" class="btn btn-info mx-2">Ver Lista de Blogs</a>
+    </div>
+</div>
+{% endblock %}

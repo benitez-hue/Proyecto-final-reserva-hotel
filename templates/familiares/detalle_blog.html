@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+{{ blog.titulo }}
+{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <!-- Título del blog -->
+    <h1 class="text-center">{{ blog.titulo }}</h1>
+    
+    <!-- Información del autor y fecha -->
+    <p><strong>Autor:</strong> {{ blog.autor }}</p>
+    <p><strong>Fecha:</strong> {{ blog.fecha|date:"d M Y" }}</p>
+
+    <hr>
+    
+    <!-- Contenido del blog -->
+    <p>{{ blog.contenido|linebreaks }}</p>
+
+    <!-- Botón para regresar a la lista de blogs -->
+    <div class="text-center mt-4">
+        <a href="{% url 'lista_blogs' %}" class="btn btn-primary">
+            Volver a la lista de blogs
+        </a>
+    </div>
+</div>
+{% endblock %}
